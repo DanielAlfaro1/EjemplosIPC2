@@ -2,7 +2,6 @@ from .Nodo import Nodo
 
 class Lista:
 
-    
     def __init__(self):
         self.Inicio = None
         self.Final = None
@@ -18,8 +17,8 @@ class Lista:
             NuevoNodo.Siguiente = self.Inicio
             self.Inicio = NuevoNodo
     
-    def Insertar(self, Numero, Dato):
-        NuevoNodo = Nodo(Numero, Dato)
+    def Insertar(self, Dato):
+        NuevoNodo = Nodo(Dato)
         self.Limite += 1
         if self.Inicio == None:
             self.Inicio = NuevoNodo
@@ -87,63 +86,13 @@ class Lista:
                 Auxiliar = Auxiliar.Siguiente
                 Contador += 1
 
-    def Ordenar1(self):
-        for n in range(self.Limite):
-            print("iteracion",n+1)
-            Actual = self.Inicio
-            Anterior = None
-            while Actual != None:
-                if Actual.Siguiente != None:
-                    if Actual.ObtenerNumero() > Actual.Siguiente.ObtenerNumero():
-                        #Si entramos acá, quiere decir que el siguiente nodo es menor al actual
-                        if Actual == self.Inicio:
-                            #Si entramos acá quiere decir que el elemento desordenado es el primero
-                            self.Inicio = Actual.Siguiente
-                            Actual.Siguiente = self.Inicio.Siguiente
-                            self.Inicio.Siguiente = Actual
-                        else:
-                            #Si entramos acá quiere decir que el elemento desordenado no es el primero
-                            Anterior.Siguiente = Actual.Siguiente
-                            Actual.Siguiente = Actual.Siguiente.Siguiente
-                            Anterior.Siguiente.Siguiente = Actual
-                Anterior = Actual
-                Actual = Actual.Siguiente
-    
-    def Ordenar2(self):
-        Bandera = True
-        numero = 1
-        while Bandera:
-            Actual = self.Inicio
-            Anterior = None
-            Bandera = False
-            print("iteracion",numero)
-            numero += 1
-            while Actual != None:
-                if Actual.Siguiente != None:
-                    if Actual.ObtenerNumero() > Actual.Siguiente.ObtenerNumero():
-                        #Si entramos acá, quiere decir que el siguiente nodo es menor al actual
-                        Bandera = True
-                        if Actual == self.Inicio:
-                            #Si entramos acá quiere decir que el elemento desordenado es el primero
-                            self.Inicio = Actual.Siguiente
-                            Actual.Siguiente = self.Inicio.Siguiente
-                            self.Inicio.Siguiente = Actual
-                        else:
-                            #Si entramos acá quiere decir que el elemento desordenado no es el primero
-                            Anterior.Siguiente = Actual.Siguiente
-                            Actual.Siguiente = Actual.Siguiente.Siguiente
-                            Anterior.Siguiente.Siguiente = Actual
-                Anterior = Actual
-                Actual = Actual.Siguiente
-
-
     def Impimir(self):
         Retorno = "La lista tiene: ["
         if self.Inicio == None:
             return "La lista está vacía."
         Auxiliar = self.Inicio
         while Auxiliar != None:
-            Retorno += str(Auxiliar.Imprimir())
+            Retorno += Auxiliar.ObtenerDato()
             if Auxiliar.Siguiente != None:
                 Retorno += ", "
             Auxiliar = Auxiliar.Siguiente

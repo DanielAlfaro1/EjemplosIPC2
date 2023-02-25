@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<JuegosViejos>
+	<ListadoJuegos>
+		<Juego>
+			<codigo>3</codigo>
+			<nombre>Metal Gear Solid 2 Substance</nombre>
+			<Plataformas>
+				<Plataforma>
+					<codigo>018</codigo>
+				</Plataforma>
+				<Plataforma>
+					<codigo>580</codigo>
+				</Plataforma>
+			</Plataformas>
+		</Juego>
+		<Juego>
+			<codigo>8</codigo>
+			<nombre>Halo 2</nombre>
+			<Plataformas>
+				<Plataforma>
+					<codigo>580</codigo>
+				</Plataforma>
+				<Plataforma>
+					<codigo>001</codigo>
+				</Plataforma>
+			</Plataformas>
+		</Juego>
+		<Juego>
+			<codigo>6</codigo>
+			<nombre>Golden Sun</nombre>
+			<Plataformas>
+				<Plataforma>
+					<codigo>158</codigo>
+				</Plataforma>
+			</Plataformas>
+		</Juego>
+		<Juego>
+			<codigo>2</codigo>
+			<nombre>Grand Theft Auto: Vice City</nombre>
+			<Plataformas>
+				<Plataforma>
+					<codigo>018</codigo>
+				</Plataforma>
+				<Plataforma>
+					<codigo>001</codigo>
+				</Plataforma>
+				<Plataforma>
+					<codigo>580</codigo>
+				</Plataforma>
+			</Plataformas>
+		</Juego>
+		<Juego>
+			<codigo>7</codigo>
+			<nombre>V-Rally 3</nombre>
+			<Plataformas>
+				<Plataforma>
+					<codigo>001</codigo>
+				</Plataforma>
+				<Plataforma>
+					<codigo>158</codigo>
+				</Plataforma>
+			</Plataformas>
+		</Juego>
+	</ListadoJuegos>
+	<ListaPlataformas>
+		<Plataforma>
+			<codigo>158</codigo>
+			<nombre>Gameboy Advance</nombre>
+		</Plataforma>
+		<Plataforma>
+			<codigo>580</codigo>
+			<nombre>Xbox</nombre>
+		</Plataforma>
+		<Plataforma>
+			<codigo>118</codigo>
+			<nombre>Game Cube</nombre>
+		</Plataforma>
+		<Plataforma>
+			<codigo>001</codigo>
+			<nombre>PC</nombre>
+		</Plataforma>
+		<Plataforma>
+			<codigo>018</codigo>
+			<nombre>Play Station 2</nombre>
+		</Plataforma>
+	</ListaPlataformas>
+</JuegosViejos>
