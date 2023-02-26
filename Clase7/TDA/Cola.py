@@ -2,9 +2,10 @@ from .Nodo import Nodo
 
 class Cola:
 
-    def __init__(self):
+    def __init__(self, Color):
         self.Cabeza = None
         self.Cola = None
+        self.Color = Color
 
     def Insertar(self, Columna, Fila):
         NuevoNodo = Nodo(Columna, Fila)
@@ -88,3 +89,32 @@ class Cola:
     def MoverAuxiliar(self, Ficha, NuevaFila, NuevaColumna):
         Ficha.SetFila(NuevaFila)
         Ficha.SetColumna(NuevaColumna)
+
+    def MostrarComida(self, FichasContrarias):
+        ListaComestibles = Cola('White')
+        Auxiliar = self.Cabeza
+        while Auxiliar != None:
+            Fila = Auxiliar.ObtenerFila()
+            Columna = Auxiliar.ObtenerColumna()
+            #Comer1: Fila+1, Columna+1
+            if FichasContrarias.BuscarPosicion(Fila+1, Columna+1):
+                print("Ficha en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(Fila+1)+" Columna: "+str(Columna+1))
+                if (Fila+2 < self.LimiteVertical and Columna+2<self.LimiteHorizontal):
+                    ListaComestibles.Insertar((Columna+1), (Fila+1))
+            #Comer1: Fila-1, Columna+1
+            elif FichasContrarias.BuscarPosicion(Fila-1, Columna+1):
+                print("Ficha en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(Fila-1)+" Columna: "+str(Columna+1))
+                if (Fila-2 >= 0 and Columna+2<self.LimiteHorizontal):
+                    ListaComestibles.Insertar((Columna+1), (Fila-1))
+            #Comer1: Fila-1, Columna-1
+            elif FichasContrarias.BuscarPosicion(Fila-1, Columna-1):
+                print("Ficha en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(Fila-1)+" Columna: "+str(Columna-1))
+                if (Fila-2 >= 0 and Columna-2 >= 0):
+                    ListaComestibles.Insertar((Columna-1), (Fila-1))
+            #Comer1: Fila+1, Columna-1
+            elif FichasContrarias.BuscarPosicion(Fila+1, Columna-1):
+                print("Ficha en:\nFila: "+str(Auxiliar.ObtenerFila())+ " Columna: " + str(Auxiliar.ObtenerColumna())+"\nPuede Comer Ficha en Fila: "+str(Fila+1)+" Columna: "+str(Columna-1))
+                if (Fila+2 < self.LimiteVertical and Columna-2 >= 0):
+                    ListaComestibles.Insertar((Columna-1), (Fila+1))
+            Auxiliar = Auxiliar.Siguiente
+        return ListaComestibles

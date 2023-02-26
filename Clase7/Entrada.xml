@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Damas>
     <Tablero>
-        <Fila>10</Fila>
-        <Columna>10</Columna>
+        <Fila>1000</Fila>
+        <Columna>1000</Columna>
     </Tablero>
     <Fichas>
         <Rojas>
@@ -26,6 +26,10 @@
                 <Fila>1</Fila>
                 <Columna>4</Columna>
             </Posicion>
+            <Posicion>
+                <Fila>99</Fila>
+                <Columna>99</Columna>
+            </Posicion>
         </Rojas>
         <Negras>
             <Posicion>
@@ -43,6 +47,10 @@
             <Posicion>
                 <Fila>5</Fila>
                 <Columna>1</Columna>
+            </Posicion>
+            <Posicion>
+                <Fila>98</Fila>
+                <Columna>98</Columna>
             </Posicion>
         </Negras>
     </Fichas>
