@@ -1,0 +1,21 @@
+{% load static %}
+<html>
+    <head>
+        <title>Pagina dinamica</title>
+        <link rel="stylesheet" href="{% static 'css/miEstilo.css' %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    </head>
+    <body>
+        <div>
+            <h1>Publicaciones de IPC2</h1>
+        </div>
+        {% for publicacion in Publicaciones %}
+            <div>
+                <h3><b>Autor: </b> {{publicacion.autor}} </h3>
+                <p><b>Contenido: </b>{{publicacion.Contenido}}</p>
+                <p><b>Fecha: </b> {{publicacion.fecha_Publicacion}}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
