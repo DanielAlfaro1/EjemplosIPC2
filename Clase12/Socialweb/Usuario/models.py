@@ -13,3 +13,20 @@ class Publicacion(models.Model):
 
     def __str__(self):
         return "El Autor es: "+str(self.autor) + "\nContenido: "+str(self.Contenido)
+
+class Usuario(models.Model):
+    UserName = models.TextField()
+
+    def __str__(self):
+        return "El nombre: " + str(self.UserName)
+
+
+#NUEVO
+class PalabrasClave(models.Model):
+    Palabras = models.TextField()
+
+    def __str__(self):
+        PalabrasClave = ""
+        for P in self.Palabras:
+            PalabrasClave += str(P)+"\n"
+        return "Las palabras son: " + PalabrasClave
